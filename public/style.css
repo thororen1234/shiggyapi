@@ -1,0 +1,35 @@
+.center {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.thumbnail img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.2s;
+}
+
+.thumbnail img:hover {
+    transform: scale(1.1);
+}
+
+img {
+    display: block;
+}
+
+a {
+    display: block;
+    text-align: center;
+}
+
+.shiggy img {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
