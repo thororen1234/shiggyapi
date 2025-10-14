@@ -52,7 +52,7 @@ function renderMeta(imagesNum, randomFavicon) {
         <meta name="twitter:title" content="The Shiggy API" />
         <meta name="twitter:description" content="${imagesNum} random images of Shiggy and counting..." />
         <meta name="twitter:image" content="${SITE}/${randomFavicon}" />
-    `
+    `;
 }
 
 function renderPage(title, bodyContent) {
@@ -167,3 +167,4 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
     scrapeImages();
 });
+
