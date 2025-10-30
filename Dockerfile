@@ -9,7 +9,6 @@ COPY package*.json pnpm-*.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
-RUN pnpm build
 
 ENV HOST=0.0.0.0
 ENV PORT=8080
