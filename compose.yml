@@ -2,5 +2,5 @@ services:
   website:
     image: ghcr.io/thororen1234/shiggyapi:latest
     ports:
-      - "127.0.0.1:4323:8080"
+      - "127.0.0.1:4000:4000"
     restart: unless-stopped
