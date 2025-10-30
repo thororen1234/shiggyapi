@@ -1,5 +1,5 @@
 services:
-  website:
+  shiggyapi:
     image: ghcr.io/thororen1234/shiggyapi:latest
     ports:
       - "127.0.0.1:4000:4000"
