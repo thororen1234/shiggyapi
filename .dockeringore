@@ -1,0 +1,7 @@
+node_modules
+dist
+posts
+.env
+.git
+.gitignore
+*.md

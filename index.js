@@ -7,7 +7,8 @@ import { config } from "dotenv";
 const env = config({ processEnv: {} }).parsed;
 
 const PORT = env.PORT || 4000;
-const SITE = env.SITE || `http://localhost:${PORT}`;
+const SITE = env.SITE || `http://localhost`;
+const DOMAIN = `${SITE}:${PORT}`;
 const POSTS_DIR = path.resolve("./posts");
 const CHECKED_FILE = path.resolve("./checked.json");
 
@@ -45,13 +46,13 @@ function renderMeta(imagesNum, randomFavicon) {
     return `
         <meta property="og:title" content="The Shiggy API" />
         <meta property="og:description" content="${imagesNum} random images of Shiggy and counting..." />
-        <meta property="og:image" content="${SITE}/${randomFavicon}" />
+        <meta property="og:image" content="${DOMAIN}/${randomFavicon}" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="${SITE}/" />
+        <meta property="og:url" content="${DOMAIN}/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Shiggy API" />
         <meta name="twitter:description" content="${imagesNum} random images of Shiggy and counting..." />
-        <meta name="twitter:image" content="${SITE}/${randomFavicon}" />
+        <meta name="twitter:image" content="${DOMAIN}/${randomFavicon}" />
     `;
 }
 
@@ -164,7 +165,7 @@ async function scrapeImages() {
 }
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on ${DOMAIN}`);
     scrapeImages();
 });
 
