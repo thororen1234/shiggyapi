@@ -112,6 +112,10 @@ app.get("/view", (req, res) => {
     ));
 });
 
+app.get("/ping", (req, res) => {
+    res.send("pong");
+});
+
 async function processImage(fileUrl, outputPath) {
     if (checked.includes(fileUrl)) return;
 
