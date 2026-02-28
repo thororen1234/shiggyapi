@@ -37,7 +37,9 @@ function getFragment(filename) {
         <div class="shiggy">
             <img src="/image/${filename}" />
             <a href="/image/${filename}">Permalink</a>
-            <a href="#" onclick="window.location.reload()">Another one</a>
+            <a href="#" onclick="window.location.reload()">Another One</a>
+            <a href="/image/random">Random Image</a>
+            <a href="/view">View All Images</a>
         </div>
     `;
 }

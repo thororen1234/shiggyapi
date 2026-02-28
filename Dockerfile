@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-alpine
 WORKDIR /app
 
 ENV PNPM_HOME="/pnpm"
