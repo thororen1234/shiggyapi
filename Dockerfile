@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:lts-alpine AS build
 WORKDIR /app
 
 ENV PNPM_HOME="/pnpm"
@@ -11,5 +11,17 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm build
 
+FROM node:lts-alpine
+WORKDIR /app
+
 ENV NODE_ENV=production
-CMD ["node", "build/index.js"]
+ENV HOST=0.0.0.0
+ENV PORT=4000
+
+COPY package*.json pnpm-*.yaml ./
+RUN pnpm install --prod --frozen-lockfile
+
+COPY --from=build /app/build ./build
+
+EXPOSE 4000
+CMD ["pnpm", "start"]
