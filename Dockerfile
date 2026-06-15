@@ -9,5 +9,7 @@ COPY package*.json pnpm-*.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
+RUN pnpm build
 
-CMD ["pnpm", "start"]
+ENV NODE_ENV=production
+CMD ["node", "build/index.js"]

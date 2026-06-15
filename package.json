@@ -4,14 +4,20 @@
   "license": "GPL-3.0-or-later",
   "description": "random images of shiggy",
   "author": "thororen1234",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.5.4",
+    "@sveltejs/kit": "^2.65.0",
+    "svelte": "^5.56.3",
+    "vite": "^8.0.16"
   },
   "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "sharp": "^0.34.4"
-  },
-  "type": "module"
+    "sharp": "^0.35.1"
+  }
 }
