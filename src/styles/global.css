@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+
+    --breakpoint-3xl: 120rem;
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 112.5%;
+    }
+}
+
+@media (min-width: 3200px) {
+    html {
+        font-size: 125%;
+    }
+}
+
+body {
+    @apply 3xl:max-w-[110rem] mx-auto max-w-6xl bg-zinc-200 text-neutral-800 2xl:max-w-[88rem] dark:bg-zinc-950 dark:text-neutral-300;
+}

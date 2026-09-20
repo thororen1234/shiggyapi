@@ -2,5 +2,6 @@ posts
 node_modules
 checked.json
 .env
-.svelte-kit
-build
+.next
+next-env.d.ts
+tsconfig.tsbuildinfo
