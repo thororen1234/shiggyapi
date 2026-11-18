@@ -1,4 +1,4 @@
-import type sharp from "sharp"
+import type { Sharp } from "sharp"
 import { flag, num } from "./params"
 
 export interface Effects {
@@ -27,7 +27,7 @@ export function hasEffects(fx: Effects): boolean {
     return Object.values(fx).some(Boolean)
 }
 
-export function applyEffects(image: sharp.Sharp, fx: Effects): sharp.Sharp {
+export function applyEffects(image: Sharp, fx: Effects): Sharp {
     if (fx.size) image = image.resize({ width: fx.size })
     if (fx.flip) image = image.flip()
     if (fx.flop) image = image.flop()

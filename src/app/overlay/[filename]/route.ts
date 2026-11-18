@@ -1,4 +1,4 @@
-import sharp from "sharp"
+import sharp, { type OutputInfo } from "sharp"
 import { parseEffects } from "@/lib/effects"
 import { CACHE, HttpError, fail, png } from "@/lib/http"
 import { num, text } from "@/lib/params"
@@ -38,7 +38,7 @@ export async function GET(
             limitInputPixels: 25_000_000,
         })
 
-        let piece: { data: Buffer; info: sharp.OutputInfo }
+        let piece: { data: Buffer; info: OutputInfo }
         try {
             const { format } = await source.metadata()
             if (!format || !FORMATS.includes(format)) throw new Error()
